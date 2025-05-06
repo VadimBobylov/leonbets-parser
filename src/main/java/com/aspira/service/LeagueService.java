@@ -23,7 +23,7 @@ public class LeagueService {
 
     @SneakyThrows
     public List<LeagueResult> fetchTopLeagueResults(List<String> targetSports) {
-        List<LeagueResult> results = Collections.synchronizedList(new ArrayList<>());
+        var results = Collections.synchronizedList(new ArrayList<LeagueResult>());
 
         client.getSports().stream()
                 .filter(sport -> targetSports.contains(sport.getName()))
